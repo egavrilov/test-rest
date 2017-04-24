@@ -17,3 +17,8 @@ POST, response with status 500: `https://test.huncode.com/post/500`
 
 
 All responses support CORS with credentials.
+
+# Why the repo?
+Created as simple service for [my blog](https://huncode.com/) article:
+
+"Fetch API Guide. Javascript Asynchronous request in 2017" https://huncode.com/fetch-api-guide-2017/
