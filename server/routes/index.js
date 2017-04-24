@@ -24,7 +24,6 @@ function getResponse(ctx) {
 
 function postResponse(ctx) {
   const body = Object.keys(ctx.request.body).length ? ctx.request.body : ctx.request.rawBody;
-  console.log(body);
   ctx.status = Number(ctx.params.code) || 200;
   ctx.body = {
     message: 'Subscribe to Eugene! https://huncode.com',
