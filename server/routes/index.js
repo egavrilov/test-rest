@@ -7,6 +7,8 @@ router.get('/get/:code', corsHeaders, getResponse);
 router.post('/post', corsHeaders, postResponse);
 router.post('/post/:code', corsHeaders, postResponse);
 
+router.options('*', corsHeaders);
+
 function corsHeaders(ctx, next) {
   ctx.set('Access-Control-Allow-Origin', ctx.get('Origin') || '*');
   ctx.set('Access-Control-Allow-Credentials', true);
@@ -17,7 +19,7 @@ function corsHeaders(ctx, next) {
 
 function getResponse(ctx) {
   ctx.status = Number(ctx.params.code) || 200;
-  ctx.body = {
+  ctx.body = ctx.params.body || {
     message: 'Subscribe to Eugene! https://huncode.com'
   };
 }
